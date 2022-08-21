@@ -14,6 +14,16 @@ public class RadioTest {
     }
 
     @Test
+    public void setVolumeUnderMin(){
+        Radio rad = new Radio();
+        rad.setCurrentVolume(-5);
+
+        int expected = 0;
+        int actual = rad.getCurrentVolume();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void setVolumeInRange(){
         Radio rad = new Radio();
         rad.setCurrentVolume(5);
@@ -81,6 +91,16 @@ public class RadioTest {
     public void setCurrentNumberStationUpMax(){
         Radio rad = new Radio();
         rad.setCurrentNumberStation(50);
+
+        int expected = 0;
+        int actual = rad.getCurrentNumberStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setCurrentNumberStationUnderMin(){
+        Radio rad = new Radio();
+        rad.setCurrentNumberStation(-5);
 
         int expected = 0;
         int actual = rad.getCurrentNumberStation();
